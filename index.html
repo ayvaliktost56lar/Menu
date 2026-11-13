@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>56'lar Ayvalık Tosthub | Orijinal Lezzet Durağı</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #ff1b1b;
+            --primary-hover: #d90d0d;
+            --accent: #ff3b3b;
+            --dark-bg: #09090B;
+            --card-bg: #141418;
+            --text-light: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        .tab-btn:focus-visible,
+        .quiz-option:focus-visible {
+            outline: 2px solid rgba(255, 27, 27, 0.95);
+            outline-offset: 3px;
+            box-shadow: 0 0 0 4px rgba(255, 27, 27, 0.18);
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(9, 9, 11, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-logo i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .brand-logo-text {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-order {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 0.75rem 1.6rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 20px rgba(255, 27, 27, 0.45);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-order:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 27, 27, 0.7);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(180deg, rgba(9,9,11,0.5) 0%, var(--dark-bg) 100%), url('1.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 9rem 5% 4rem;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 27, 27, 0.14);
+            color: #ffb7b7;
+            border: 1px solid rgba(255, 75, 75, 0.45);
+            padding: 0.4rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff6f6, #ffc2c2, #ff1b1b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .menu-helper {
+            padding: 2rem 8% 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-helper-card {
+            background: linear-gradient(135deg, rgba(255, 27, 27, 0.13), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 75, 75, 0.25);
+            border-radius: 26px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(255, 27, 27, 0.08);
+        }
+
+        .helper-tag {
+            display: inline-block;
+            background: rgba(255, 27, 27, 0.14);
+            color: #ffb7b7;
+            border: 1px solid rgba(255, 75, 75, 0.35);
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.6px;
+            padding: 0.5rem 1rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .menu-helper-card h3 {
+            font-size: clamp(1.8rem, 2vw, 2.5rem);
+            margin-bottom: 0.6rem;
+        }
+
+        .menu-helper-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.6rem;
+        }
+
+        .quiz-wrapper {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .quiz-topline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .question-counter {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 27, 27, 0.12);
+            border: 1px solid rgba(255, 75, 75, 0.35);
+            color: #ffc2c2;
+            border-radius: 999px;
+            padding: 0.45rem 0.85rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .reset-quiz {
+            border: 1px solid rgba(255, 75, 75, 0.4);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+            border-radius: 999px;
+            padding: 0.55rem 0.9rem;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .reset-quiz:hover {
+            background: rgba(255, 27, 27, 0.12);
+        }
+
+        .question-block {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .question-block h4 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 0.15rem;
+        }
+
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-light);
+            border-radius: 16px;
+            padding: 1rem 1.1rem;
+            text-align: left;
+            cursor: pointer;
+            font-size: 0.98rem;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .quiz-option:hover,
+        .quiz-option.active {
+            background: linear-gradient(135deg, rgba(255, 27, 27, 0.16), rgba(255, 59, 59, 0.06));
+            border-color: rgba(255, 75, 75, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .assistant-recommendation {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 75, 75, 0.26);
+            border-radius: 18px;
+            padding: 1.1rem 1.2rem;
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        .assistant-recommendation strong {
+            color: var(--primary);
+        }
+
+        /* MENU SECTION */
+        .menu-section {
+            padding: 4rem 8% 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-top: 0.5rem;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--card-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+        }
+
+        #drinkMenuSection {
+            margin-top: 4rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 2.2rem;
+        }
+
+        .menu-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(229, 57, 53, 0.5);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            position: relative;
+            background: #1f1f26;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .menu-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .menu-card-body {
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .menu-card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #fff;
+        }
+
+        .menu-card-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .price-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .single-price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .combo-price {
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-align: right;
+            font-weight: 600;
+        }
+
+        /* LOCATION & FOOTER */
+        .location-section {
+            background: #0f0f13;
+            padding: 5rem 8%;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .location-card h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .location-card p {
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 1rem 5%; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.6rem; }
+            .section-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <a href="#" class="brand-logo">
+            <i class="fa-solid fa-fire-burner"></i>
+            <div class="brand-logo-text">56'lar <span>Tosthub</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#hero">Ana Sayfa</a></li>
+            <li><a href="#menu">41 Çeşit Menü</a></li>
+            <li><a href="#konum">Konum & İletişim</a></li>
+        </ul>
+        <a href="https://share.google/crbEGb8QjZQXT3ZIG" target="_blank" class="btn-order">
+            <i class="fa-solid fa-location-dot"></i> Yol Tarifi Al
+        </a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <span class="badge">Orijinal Ayvalık & Gurme Tostlar</span>
+            <h1>Sıcak, Çıtır ve Taşan Lezzetler</h1>
+            <p>Ahşap sunumu, özel baharatları ve 41 farklı zengin seçeneğiyle 56'lar Ayvalık Tosthub menüsü hizmetinizde.</p>
+            <a href="#menu" class="btn-order" style="padding: 1rem 2.5rem; font-size: 1rem;">
+                Menüyü İncele <i class="fa-solid fa-arrow-down" style="margin-left: 8px;"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="menu-helper" aria-label="Menü önerisi asistanı">
+        <div class="menu-helper-card">
+            <span class="helper-tag">Menü Rehberi</span>
+            <h3>Menü seçmekte zorlanıyor musunuz?</h3>
+            <p>Birazdan sana birkaç eğlenceli soru sorup en uygun tostunu öneriyoruz.</p>
+
+            <div class="quiz-wrapper">
+                <div class="quiz-topline">
+                    <span class="question-counter" id="questionCounter">Soru 1 / 4</span>
+                    <button class="reset-quiz" type="button" id="resetQuiz">Yeniden başla</button>
+                </div>
+
+                <div class="question-block" id="questionBlock"></div>
+
+                <div class="assistant-recommendation" id="assistantRecommendation">
+                    <strong>Öneri:</strong> İlk soru için bir seçim yap, sana tam sana göre bir tost hazırlayalım.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL MENU SECTION -->
+    <section class="menu-section" id="menu">
+        <div class="section-header">
+            <span class="section-subtitle">Tam 41 Çeşit Lezzet</span>
+            <h2 class="section-title">Orijinal Tost & Atıştırmalık Menümüz</h2>
+        </div>
+
+        <!-- Filtreleme Butonları -->
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterMenu('all', this)">Tüm Menü (41)</button>
+            <button class="tab-btn" onclick="filterMenu('karisik', this)">Karışık & Tostlar</button>
+            <button class="tab-btn" onclick="filterMenu('gurme', this)">Gurme & Etli</button>
+            <button class="tab-btn" onclick="filterMenu('peynirli', this)">Peynirli</button>
+            <button class="tab-btn" onclick="filterMenu('atistirmalik', this)">Atıştırmalık & Tatlı</button>
+            <button class="tab-btn" onclick="filterMenu('icecekler', this)">İçecekler</button>
+        </div>
+
+        <div class="menu-grid" id="foodMenuGrid">
+
+            <!-- 1 -->
+            <div class="menu-card" data-category="gurme">
+                <div class="img-container"><img src="1.jpeg" alt="Kavurma Kaşarlı Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Kavurma Kaşarlı Tost</h3>
+                    <p class="menu-card-desc">Dana kavurma eti, eritilmiş kaşar, taze domates ve turşu.</p>
+                    <div class="price-box"><span class="single-price">284,00 ₺</span><span class="combo-price">Menü: 429,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="menu-card" data-category="gurme">
+                <div class="img-container"><img src="2.jpeg" alt="Süper Sucuklu Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Süper Sucuklu Tost</h3>
+                    <p class="menu-card-desc">Çift katlı ekmek arası bol sucuk dilimleri, domates, turşu, ketçap-mayonez.</p>
+                    <div class="price-box"><span class="single-price">199,00 ₺</span><span class="combo-price">Menü: 344,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="3.jpeg" alt="Mega Karışık Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Mega Karışık Tost</h3>
+                    <p class="menu-card-desc">Kızarmış sosis, kaşar, sucuk, salam, jambon, turşu, rus salatası, ketçap-mayonez.</p>
+                    <div class="price-box"><span class="single-price">214,00 ₺</span><span class="combo-price">Menü: 359,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="menu-card" data-category="gurme">
+                <div class="img-container"><img src="4.jpeg" alt="Ton Balıklı Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Ton Balıklı Tost</h3>
+                    <p class="menu-card-desc">Zengin ton balığı parçaları, taze marul yaprakları, domates ve turşu.</p>
+                    <div class="price-box"><span class="single-price">177,00 ₺</span><span class="combo-price">Menü: 322,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="5.jpeg" alt="Ayvalık Kumru Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Ayvalık Kumru Tost</h3>
+                    <p class="menu-card-desc">Baharatlı sosis, sucuk, kaşar, jambon, turşu, ketçap ve mayonez.</p>
+                    <div class="price-box"><span class="single-price">275,00 ₺</span><span class="combo-price">Menü: 420,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="6.jpeg" alt="Karışık Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Karışık Tost</h3>
+                    <p class="menu-card-desc">Kızarmış sosis, kaşar, sucuk, salam, turşu, rus salatası, ketçap ve mayonez.</p>
+                    <div class="price-box"><span class="single-price">209,00 ₺</span><span class="combo-price">Menü: 354,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="menu-card" data-category="peynirli">
+                <div class="img-container"><img src="7.jpeg" alt="Tulum Peynir Kaşarlı Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Tulum Peynir Kaşarlı Tost</h3>
+                    <p class="menu-card-desc">Özel tulum peyniri, uzayan kaşar, taze domates ve yeşil zeytin.</p>
+                    <div class="price-box"><span class="single-price">155,00 ₺</span><span class="combo-price">Menü: 380,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="menu-card" data-category="peynirli">
+                <div class="img-container"><img src="8.jpeg" alt="Kaşarlı Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Kaşarlı Tost</h3>
+                    <p class="menu-card-desc">Çift katlı ekmek arası bol kaşar peyniri, domates, turşu, ketçap ve mayonez.</p>
+                    <div class="price-box"><span class="single-price">145,00 ₺</span><span class="combo-price">Menü: 290,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="menu-card" data-category="peynirli">
+                <div class="img-container"><img src="9.jpeg" alt="Süper Beyaz Peynir Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Süper Beyaz Peynir Tost</h3>
+                    <p class="menu-card-desc">Çift katlı ekmek arası beyaz peynir, sucuk dilimleri, domates ve yeşil zeytin.</p>
+                    <div class="price-box"><span class="single-price">218,00 ₺</span><span class="combo-price">Menü: 363,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="menu-card" data-category="gurme">
+                <div class="img-container"><img src="10.jpeg" alt="Süper Kavurma Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Süper Kavurma Tost</h3>
+                    <p class="menu-card-desc">Çift katlı ekmek, duble dana kavurma eti, kaşar peyniri, domates ve turşu.</p>
+                    <div class="price-box"><span class="single-price">399,00 ₺</span><span class="combo-price">Menü: 544,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="menu-card" data-category="gurme">
+                <div class="img-container"><img src="11.jpeg" alt="Sucuk Ekmek Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Sucuk Ekmek Tost</h3>
+                    <p class="menu-card-desc">Izgarada pişirilmiş sucuk dilimleriyle hazırlanan klasik sucuk ekmek tost.</p>
+                    <div class="price-box"><span class="single-price">293,00 ₺</span><span class="combo-price">Menü: 438,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="12.jpeg" alt="Süper Kaşarlı Sucuklu Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Süper Kaşarlı Sucuklu Tost</h3>
+                    <p class="menu-card-desc">Erimiş kaşar, sucuk, domates, turşu ve ketçap-mayonez.</p>
+                    <div class="price-box"><span class="single-price">209,00 ₺</span><span class="combo-price">Menü: 354,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 13 -->
+            <div class="menu-card" data-category="gurme">
+                <div class="img-container"><img src="13.jpeg" alt="Ayvalık Schnitzel Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Ayvalık Schnitzel Tost</h3>
+                    <p class="menu-card-desc">Tavuk schnitzel, kaşar, marul, domates, turşu, ketçap-mayonez.</p>
+                    <div class="price-box"><span class="single-price">164,00 ₺</span><span class="combo-price">Menü: 309,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 14 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="14.jpeg" alt="Jambon Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Jambon Tost</h3>
+                    <p class="menu-card-desc">Jambon dilimleri, eritilmiş kaşar peyniri ve özel Tosthub sosu.</p>
+                    <div class="price-box"><span class="single-price">169,00 ₺</span><span class="combo-price">Menü: 314,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 15 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="15.jpeg" alt="Sucuk Kaşar Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Sucuk Kaşar Tost</h3>
+                    <p class="menu-card-desc">Izgarada pişmiş sucuk, eritilmiş kaşar peyniri, domates, turşu ve özel sos.</p>
+                    <div class="price-box"><span class="single-price">169,00 ₺</span><span class="combo-price">Menü: 314,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 16 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="16.jpeg" alt="Süper Karışık Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Süper Karışık Tost</h3>
+                    <p class="menu-card-desc">Çift katlı ekmek, kızarmış sosis, kaşar, sucuk, salam, rus salatası, turşu.</p>
+                    <div class="price-box"><span class="single-price">269,00 ₺</span><span class="combo-price">Menü: 414,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 17 -->
+            <div class="menu-card" data-category="peynirli">
+                <div class="img-container"><img src="17.jpeg" alt="Beyaz Peynirli Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Beyaz Peynirli Tost</h3>
+                    <p class="menu-card-desc">Orijinal Beyaz Peynirli, domates, turşu ve yeşil biber dilimleri.</p>
+                    <div class="price-box"><span class="single-price">150,00 ₺</span><span class="combo-price">Menü: 295,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 18 -->
+            <div class="menu-card" data-category="peynirli">
+                <div class="img-container"><img src="18.jpeg" alt="Bergama Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Bergama Tost</h3>
+                    <p class="menu-card-desc">Taze beyaz peynir, yeşil biber ve domates dilimleriyle hafif lezzet.</p>
+                    <div class="price-box"><span class="single-price">174,00 ₺</span><span class="combo-price">Menü: 319,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 19 -->
+            <div class="menu-card" data-category="atistirmalik">
+                <div class="img-container"><img src="19.jpeg" alt="Çikolatalı Meyveli Tatlı Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Çikolatalı Meyveli Tatlı Tost</h3>
+                    <p class="menu-card-desc">Akışkan çikolata, muz dilimleri, hindistan cevizi ve özel soslar.</p>
+                    <div class="price-box"><span class="single-price">300,00 ₺</span><span class="combo-price">Tatlı Özel Sunum</span></div>
+                </div>
+            </div>
+
+            <!-- 20 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="20.jpeg" alt="Süper Sucuklu Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Süper Sucuklu Tost</h3>
+                    <p class="menu-card-desc">Çift katlı ekmek, bol kaşar, sucuk dilimleri, domates ve turşu.</p>
+                    <div class="price-box"><span class="single-price">199,00 ₺</span><span class="combo-price">Menü: 344,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 22 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="22.jpeg" alt="Mega Süper Karışık Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Mega Süper Karışık Tost</h3>
+                    <p class="menu-card-desc">Bol sosis, salam, kaşar, özel soslar ve taşan gurme sunum.</p>
+                    <div class="price-box"><span class="single-price">275,00 ₺</span><span class="combo-price">Menü: 420,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 23 -->
+            <div class="menu-card" data-category="gurme">
+                <div class="img-container"><img src="23.jpeg" alt="Ayvalık Köfte Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Ayvalık Köfte Tost</h3>
+                    <p class="menu-card-desc">Burger köfte, kaşar peyniri, marul, domates, turşu ve özel sos.</p>
+                    <div class="price-box"><span class="single-price">164,00 ₺</span><span class="combo-price">Menü: 309,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 24 -->
+            <div class="menu-card" data-category="atistirmalik">
+                <div class="img-container"><img src="24.jpeg" alt="Soğan Halkası Tabağı"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Çıtır Soğan Halkası</h3>
+                    <p class="menu-card-desc">Özel dip soslar eşliğinde sıcak çıtır soğan halkası sepeti.</p>
+                    <div class="price-box"><span class="single-price">95,00 ₺</span><span class="combo-price">Atıştırmalık</span></div>
+                </div>
+            </div>
+
+            <!-- 25 -->
+            <div class="menu-card" data-category="atistirmalik">
+                <div class="img-container"><img src="25.jpeg" alt="Çıtır Tavuk Nugget"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Çıtır Tavuk Nugget</h3>
+                    <p class="menu-card-desc">Özel soslarıyla servis edilen altın sarısı çıtır nugget sepeti.</p>
+                    <div class="price-box"><span class="single-price">110,00 ₺</span><span class="combo-price">Atıştırmalık</span></div>
+                </div>
+            </div>
+
+            <!-- 26 -->
+            <div class="menu-card" data-category="peynirli">
+                <div class="img-container"><img src="26.jpeg" alt="Süper Kaşarlı Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Süper Kaşarlı Tost</h3>
+                    <p class="menu-card-desc">Bol eritilmiş kaşar peyniri; domates, turşu ve taze yeşil biberle tamamlanır.</p>
+                    <div class="price-box"><span class="single-price">189,00 ₺</span><span class="combo-price">Menü: 334,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 27 -->
+            <div class="menu-card" data-category="peynirli">
+                <div class="img-container"><img src="27.jpeg" alt="Ezine Peynirli Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Ezine Peynirli Tost</h3>
+                    <p class="menu-card-desc">Ezine peyniri, domates dilimleri ve biber garnitürüyle hazırlanan yöresel lezzet.</p>
+                    <div class="price-box"><span class="single-price">174,00 ₺</span><span class="combo-price">Menü: 319,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 28 -->
+            <div class="menu-card" data-category="atistirmalik">
+                <div class="img-container"><img src="28.jpeg" alt="Elma Dilim Patates Cipsi"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Elma Dilim Patates Sepeti</h3>
+                    <p class="menu-card-desc">Baharatlı çıtır elma dilim patates kızartması ve soslar.</p>
+                    <div class="price-box"><span class="single-price">85,00 ₺</span><span class="combo-price">Atıştırmalık</span></div>
+                </div>
+            </div>
+
+            <!-- 29 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="29.jpeg" alt="Sosisli Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Sosisli Tost</h3>
+                    <p class="menu-card-desc">İçinde patates kızartması, eritilmiş kaşar, turşu ve özel soslar.</p>
+                    <div class="price-box"><span class="single-price">189,00 ₺</span><span class="combo-price">Menü: 334,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+            <!-- 30 -->
+            <div class="menu-card" data-category="karisik">
+                <div class="img-container"><img src="30.jpeg" alt="Ayvalık Patso Tost"></div>
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Ayvalık Patso Tost</h3>
+                    <p class="menu-card-desc">Kızarmış sosis, rus salatası, turşu, ketçap ve mayonez.</p>
+                    <div class="price-box"><span class="single-price">179,00 ₺</span><span class="combo-price">Menü: 324,00 ₺<br><small>(Cips + İçecek)</small></span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="drinkMenuSection">
+            <div class="section-header">
+                <span class="section-subtitle">İçecek Menüsü</span>
+                <h2 class="section-title">İçecekler</h2>
+            </div>
+            <div class="menu-grid">
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Coca-Cola</h3>
+                    <p class="menu-card-desc">Soğuk içecek.</p>
+                    <div class="price-box"><span class="single-price">75,00 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Fanta</h3>
+                    <p class="menu-card-desc">Soğuk içecek.</p>
+                    <div class="price-box"><span class="single-price">75,00 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Sprite</h3>
+                    <p class="menu-card-desc">Soğuk içecek.</p>
+                    <div class="price-box"><span class="single-price">75,00 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Cappy</h3>
+                    <p class="menu-card-desc">Soğuk içecek.</p>
+                    <div class="price-box"><span class="single-price">75,00 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Fuse Tea</h3>
+                    <p class="menu-card-desc">Soğuk içecek.</p>
+                    <div class="price-box"><span class="single-price">75,00 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Sade Soda</h3>
+                    <p class="menu-card-desc">Sade soda.</p>
+                    <div class="price-box"><span class="single-price">34,50 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Meyveli Soda</h3>
+                    <p class="menu-card-desc">Meyveli soda.</p>
+                    <div class="price-box"><span class="single-price">34,50 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Büyük Ayran</h3>
+                    <p class="menu-card-desc">Soğuk ayran.</p>
+                    <div class="price-box"><span class="single-price">39,50 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Küçük Ayran</h3>
+                    <p class="menu-card-desc">Soğuk ayran.</p>
+                    <div class="price-box"><span class="single-price">34,50 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Çay</h3>
+                    <p class="menu-card-desc">Sıcak çay.</p>
+                    <div class="price-box"><span class="single-price">25,00 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Şişe Su</h3>
+                    <p class="menu-card-desc">Şişe su.</p>
+                    <div class="price-box"><span class="single-price">9,50 ₺</span></div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="icecekler">
+                <div class="menu-card-body">
+                    <h3 class="menu-card-title">Coca-Cola 1L</h3>
+                    <p class="menu-card-desc">1 litrelik soğuk içecek.</p>
+                    <div class="price-box"><span class="single-price">100,00 ₺</span></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & FOOTER SECTION -->
+    <section class="location-section" id="konum">
+        <div class="location-container">
+            <div class="location-card">
+                <h4><i class="fa-solid fa-shop"></i> 56'lar Ayvalık Tosthub</h4>
+                <p>Orijinal malzeme kalitesi ve taş fırın atmosferimizle dükkanımızda sizleri ağırlamaktan mutluluk duyuyoruz.</p>
+                <p><i class="fa-solid fa-clock" style="color: var(--accent);"></i> Çalışma Saatleri: 08:00 - 23:30</p>
+            </div>
+            <div class="location-card">
+                <h4><i class="fa-solid fa-map-pin"></i> Harita & Ulaşım</h4>
+                <p>Dükkanımızın tam konumunu görüntülemek ve direkt navigasyon başlatmak için butona tıklayabilirsiniz.</p>
+                <a href="https://share.google/crbEGb8QjZQXT3ZIG" target="_blank" class="btn-order" style="display: inline-block; margin-top: 0.5rem;">
+                     Google Haritalar'da Aç
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 56'lar Ayvalık Tosthub. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <!-- SCRIPT FOR TAB FILTERING -->
+    <script>
+        function filterMenu(category, clickedButton) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (clickedButton) {
+                clickedButton.classList.add('active');
+            }
+
+            const cards = document.querySelectorAll('.menu-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('foodMenuGrid').style.display = category === 'icecekler' ? 'none' : 'grid';
+            const drinkSection = document.getElementById('drinkMenuSection');
+            drinkSection.style.display =
+                category === 'all' || category === 'icecekler' ? 'block' : 'none';
+            drinkSection.style.marginTop = category === 'all' ? '4rem' : '0';
+        }
+
+        const quizQuestions = [
+            {
+                question: 'Peynir sevenlerden misin?',
+                options: [
+                    { label: 'Kesinlikle peynirli olsun', value: 'cheese', match: 'cheese' },
+                    { label: 'Sucuk daha cazip', value: 'sausage', match: 'sausage' },
+                    { label: 'Karışık olsun', value: 'mixed', match: 'mixed' },
+                    { label: 'Sadece etli ama hafif', value: 'light', match: 'light' }
+                ]
+            },
+            {
+                question: 'Açlık hissin nasıl — çok mu acıktın?',
+                options: [
+                    { label: 'Doyurucu olmalı', value: 'heavy', match: 'heavy' },
+                    { label: 'Biraz hafif, ama lezzetli', value: 'medium', match: 'medium' },
+                    { label: 'Sadece atıştırmalık', value: 'snack', match: 'snack' },
+                    { label: 'Tam bir ara öğün', value: 'mid', match: 'mid' }
+                ]
+            },
+            {
+                question: 'Soslu ve çıtır bir şey mi istiyorsun?',
+                options: [
+                    { label: 'Evet, çıtır olsun', value: 'crispy', match: 'crispy' },
+                    { label: 'Soslu ama temiz', value: 'saucy', match: 'saucy' },
+                    { label: 'Klasik ve sade', value: 'classic', match: 'classic' },
+                    { label: 'Tatlı bir dokunuş da gelsin', value: 'sweet', match: 'sweet' }
+                ]
+            },
+            {
+                question: 'Son tercih nasıl olsun?',
+                options: [
+                    { label: 'Ekstra lezzetli ve doyurucu', value: 'best', match: 'best' },
+                    { label: 'Hafif ama keyifli', value: 'fun', match: 'fun' },
+                    { label: 'Klasik tost hissi', value: 'classicfinal', match: 'classicfinal' },
+                    { label: 'Tatlı ile bitireyim', value: 'dessert', match: 'dessert' }
+                ]
+            }
+        ];
+
+        const questionBlock = document.getElementById('questionBlock');
+        const questionCounter = document.getElementById('questionCounter');
+        const recommendationBox = document.getElementById('assistantRecommendation');
+        const resetButton = document.getElementById('resetQuiz');
+
+        let currentQuestion = 0;
+        let answers = {};
+
+        function renderQuestion() {
+            if (currentQuestion >= quizQuestions.length) {
+                showRecommendation();
+                return;
+            }
+
+            const current = quizQuestions[currentQuestion];
+            questionCounter.textContent = `Soru ${currentQuestion + 1} / ${quizQuestions.length}`;
+
+            questionBlock.innerHTML = `
+                <h4>${current.question}</h4>
+                <div class="quiz-grid">
+                    ${current.options.map(option => `
+                        <button class="quiz-option" type="button" data-value="${option.value}">
+                            ${option.label}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+
+            questionBlock.querySelectorAll('.quiz-option').forEach(button => {
+                button.addEventListener('click', () => {
+                    answers[currentQuestion] = button.dataset.value;
+                    questionBlock.querySelectorAll('.quiz-option').forEach(item => item.classList.remove('active'));
+                    button.classList.add('active');
+
+                    setTimeout(() => {
+                        currentQuestion += 1;
+                        renderQuestion();
+                    }, 180);
+                });
+            });
+        }
+
+        function showRecommendation() {
+            const pick1 = answers[0] || 'mixed';
+            const pick2 = answers[1] || 'medium';
+            const pick3 = answers[2] || 'crispy';
+            const pick4 = answers[3] || 'best';
+
+            let recommendation = 'Senin için en doğru tercih: <strong>Ayvalık Kumru Tost</strong> — soslu, çıtır ve çok lezzetli.';
+
+            if (pick1 === 'cheese' && pick2 === 'heavy') {
+                recommendation = 'Senin için en doğru tercih: <strong>Kaşarlı Kavurma Tost</strong> — peynirin ve doyuruculuğun mükemmel birleşimi.';
+            } else if (pick1 === 'sausage' || pick3 === 'saucy') {
+                recommendation = 'Senin için en doğru tercih: <strong>Sucuklu Tost</strong> — baharatlı, doyurucu ve tam bir kahvaltı enerjisi.';
+            } else if (pick1 === 'light' || pick2 === 'snack') {
+                recommendation = 'Senin için en doğru tercih: <strong>Ezine Peynirli Tost</strong> — hafif, lezzetli ve çok keyifli.';
+            } else if (pick3 === 'crispy' || pick3 === 'saucy') {
+                recommendation = 'Senin için en doğru tercih: <strong>Ayvalık Kumru Tost</strong> — sıcak, çıtır ve ekstra lezzetli.';
+            } else if (pick4 === 'dessert' || pick4 === 'fun') {
+                recommendation = 'Senin için en doğru tercih: <strong>Çikolatalı Meyveli Tost</strong> — tatlı ve eğlenceli bir final için ideal.';
+            } else if (pick2 === 'mid' || pick4 === 'classicfinal') {
+                recommendation = 'Senin için en doğru tercih: <strong>Klasik Tost Menü</strong> — güvenli, doyurucu ve her zaman doğru seçim.';
+            }
+
+            questionCounter.textContent = 'Öneri hazır';
+            questionBlock.innerHTML = '<p style="color: var(--text-muted); margin: 0;">İstediğin menü profiline göre seçim hazırlandı.</p>';
+            recommendationBox.innerHTML = recommendation;
+        }
+
+        resetButton.addEventListener('click', () => {
+            currentQuestion = 0;
+            answers = {};
+            recommendationBox.innerHTML = '<strong>Öneri:</strong> İlk soru için bir seçim yap, sana tam sana göre bir tost hazırlayalım.';
+            renderQuestion();
+        });
+
+        renderQuestion();
+    </script>
+
+</body>
+</html>
